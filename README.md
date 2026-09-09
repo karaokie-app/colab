@@ -1,24 +1,30 @@
 # karaokie worker, on a borrowed GPU
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/karaokie-app/colab/blob/main/karaokie_worker.ipynb)
+[![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/karaokie-app/colab/main/kaggle_worker.ipynb)
 
 [karaokie.app](https://karaokie.app) turns any song into a karaoke track:
 the voice separated from the music, and every word of the lyrics placed
 against it. That is a few minutes of work for a graphics card, and it is done
 by whoever lends one — not by the small machine that serves the site.
 
-This repository holds one notebook. It borrows the graphics card Google Colab
-gives a browser tab, puts it on the queue, and hands the finished songs back.
-Nothing is installed on your own machine and there is no account to make.
+This repository holds two notebooks, one for each place that will lend you a
+graphics card for nothing. Either one borrows it, puts it on the queue, and
+hands the finished songs back; nothing is installed on your own machine and
+there is no account to make with karaokie.
 
-**[Open the notebook in Colab](https://colab.research.google.com/github/karaokie-app/colab/blob/main/karaokie_worker.ipynb)**,
-choose **T4 GPU** under Runtime ▸ Change runtime type, and run the two cells.
+- **[karaokie_worker.ipynb](karaokie_worker.ipynb)** for Colab. Choose **T4
+  GPU** under Runtime ▸ Change runtime type, then run the two cells.
+- **[kaggle_worker.ipynb](kaggle_worker.ipynb)** for Kaggle, which publishes
+  its quota — about thirty GPU-hours a week — rather than leaving you to guess
+  at it. Two switches on the right have to be turned on first: **Accelerator ▸
+  GPU T4 x2**, and **Internet ▸ On**, which needs a phone-verified account.
 
-The first cell checks the two things Colab is inconsistent about: whether the
-runtime really did get a card, and whether YouTube will answer this machine at
-all — datacentre addresses are the ones asked to prove they are not a robot.
-The second downloads the worker, checks it against its published SHA-256, and
-runs it.
+The first cell of either checks what the place in question is inconsistent
+about — whether the machine really did get a card, whether it can reach the
+internet at all, and whether YouTube will answer it, since datacentre
+addresses are the ones asked to prove they are not a robot. The second
+downloads the worker, checks it against its published SHA-256, and runs it.
 
 Stop it whenever you like. A song caught half-done is a lease that stops being
 renewed, and goes back on the queue for the next worker a few minutes later.

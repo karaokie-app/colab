@@ -33,3 +33,8 @@ what runs on everybody else's machine.
 
 Every other way to run one, and who is running one now:
 <https://karaokie.app/worker>.
+
+## Licence
+
+MIT — see [LICENSE](LICENSE). Fork it, change it, run it against your own
+server; the notebook is two cells and there is nothing precious in it.
